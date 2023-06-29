@@ -19,7 +19,7 @@
 <br>
 
 <p align="center">
-  <img src="./images/diagram.jpg" width='750' />
+  <img src="./images/real_time_feature_pipeline.gif" width='750' />
 </p>
 
 #### Table of contents
