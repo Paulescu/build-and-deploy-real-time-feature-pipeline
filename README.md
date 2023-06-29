@@ -19,21 +19,18 @@
 <br>
 
 <p align="center">
-  <img src="" width='500' />
+  <img src="./images/diagram.jpg" width='750' />
 </p>
 
-#### Contents
-* [This is what you will learn](#this-is-what-you-will-learn)
-* [Real-time feature engineering in Python]()
-* [How to run the code](#how-to-run-the-code)
-* [Advanced deployment options](#advanced-deployment-options)
+#### Table of contents
+* [What is this repo about?](#what-is-this-repo-about)
+* [A bit of context](#a-bit-of-context)
+* [Run the whole thing in 10 minutes](#run-the-whole-thing-in-10-minutes)
 * [Wanna learn more real-time ML?](#wanna-learn-more-real-time-ml)
 
-## This is what you will learn
+## What is this repo about?
 
-In this repository you will learn how to develop and deploy a real-time feature pipeline in Python.
-
-More precisely, you will build a real-time feature pipeline that
+In this repository you will learn how to develop and deploy a real-time feature pipeline in Python that
 
 * **fetches** real-time trade data (aka raw data) from the [Coinbase Websocket API](https://help.coinbase.com/en/cloud/websocket-feeds/exchange)
 * **transforms** trade data into OHLC data (aka features) in real-time using **[Bytewax](https://bytewax.io/)**, and
@@ -41,8 +38,9 @@ More precisely, you will build a real-time feature pipeline that
 
 You will also build a dashboard using Bokeh and Streamlit to visualize the final features, in real-time.
 
-## Real-time feature engineering in Python
+<br>
 
+## A bit of context
 Machine Learning models are as good as the input features you feed them both at training and at inference time. And for many real-world applications, like financial trading, these features need to be generated and served **as fast as possible**, so the ML system produces the best predictions possible.
 
 Generating and serving features fast is what a **real-time feature pipeline** does.
@@ -53,7 +51,9 @@ However, things are changing fast with the emergence of Rust and libraries like 
 
 So you can develop highly peformant and scalable real-time pipelines in Python 🐍⚡
 
-## How to run the code
+<br>
+
+## Run the whole thing in 10 minutes
 
 1. Create a Python virtual environment with the project dependencies with
     ```
@@ -70,28 +70,40 @@ So you can develop highly peformant and scalable real-time pipelines in Python �
     $ make run
     ```
 
-4. To deploy the feature pipeline on an AWS EC2 instance you first need to have an AWS account and the `aws-cli` tool installed in your local system. Then run the following command to deploy your feature pipeline on an EC2 instance
+4. To spin up a Streamlit dashboard to visualize the data in real-time
+    ```
+    $ make frontend
+    ```
+
+5. To run the feature pipeline on an AWS EC2 instance you first need to have an AWS account and the `aws-cli` tool installed in your local system. Then run the following command to deploy your feature pipeline onto an EC2 instance
     ```
     $ make deploy
     ```
 
-5. Feature pipeline logs are send to AWS CloudWatch. Run the following command to grab the URL where you can see the logs.
+6. Feature pipeline logs are send to AWS CloudWatch. Run the following command to grab the URL where you can see the logs.
     ```
     $ make info
     ```
 
-6. To shutdown the feature pipeline on AWS and free resources run
+7. To shutdown the feature pipeline on AWS and free resources run
     ```
     $ make undeploy
     ```
 
-## Advanced deployment options
+<br>
 
-* We use Bytewax as our stream-processing engine and the [`waxctl`](https://bytewax.io/>docs/deployment/waxctl-aws) command line tool to deploy our dataflow to EC2.
+<!-- ## Deployment options
 
-* If you want to deploy the pipeline to a Kubernetes cluster, you will need to adjust the arguments passed to `waxctl` in the `Makefile`. Check the documentation [here](https://bytewax.io/docs/deployment/waxctl) to learn how.
+There are at least 3 ways to deploy your flows to production.
 
-* [PLATFORM]
+1. **Deployment to an AWS EC2 instance**
+In this repository we use Bytewax as our stream-processing engine and the [`waxctl`](https://bytewax.io/>docs/deployment/waxctl-aws) command line tool to deploy our dataflow to EC2. EC2 instances are enough for a proof-of-concept, but they are not the best way to scale your systems when you grow.
+
+2. **Deployment to a Kubernetes cluster**
+If you want to deploy the pipeline to a Kubernetes cluster, you will need to adjust the arguments passed to `waxctl` in the `Makefile`. Check the documentation [here](https://bytewax.io/docs/deployment/waxctl) to learn how.
+
+3. **Deployment to the Bytewax Platform** (serverless)
+If you want to add real-time processing to your systems without worrying about extra infrastructure, check out the [Bytewax Platform](https://bytewax.io/platform). -->
 
 ## Wanna learn more Real-Time ML?
 

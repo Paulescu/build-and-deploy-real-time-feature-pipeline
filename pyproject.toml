@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "src"
+version = "0.1.0"
+description = ""
+authors = ["Pau <plabartabajo@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<3.10"
+ta = "^0.10.2"
+bytewax = "^0.15.1"
+websocket-client = "^1.5.1"
+pyOpenSSL = "^23.1.1"
+hopsworks = "3.2.0"
+streamlit = "^1.24.0"
+bokeh = "2.4.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
