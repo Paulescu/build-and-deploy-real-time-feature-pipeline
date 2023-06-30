@@ -24,6 +24,7 @@
 
 #### Table of contents
 * [What is a real-time feature pipeline?](#what-is-a-real-time-feature-pipeline)
+* [Cool, but how can I implement one?](#cool-but-how-can-i-implement-one)
 * [What is this repo about?](#what-is-this-repo-about)
 * [Run the whole thing in 10 minutes](#run-the-whole-thing-in-10-minutes)
 * [Wanna learn more real-time ML?](#wanna-learn-more-real-time-ml)
@@ -40,12 +41,21 @@ Generating and serving features fast is what a **real-time feature pipeline** do
   <img src="./images/real_time_feature_pipeline_within_system.gif" width='750' />
 </p>
 
+## Cool, but how can I implement one?
+Python alone is **not** a language designed for speed 🐢, which makes it unsuitable for real-time processing. Because of this, real-time feature pipelines were usually writen with Java-based tools like Apache Spark or Apache Flink.
 
-Python alone is not a language designed for speed, which makes it unsuitable for real-time processing. Because of this, real-time feature pipelines were usually writen with Java-based tools (like Apache Spark or Apache Flink).
+However, things are changing fast with the emergence of Rust 🦀 and libraries like **[Bytewax 🐝](https://bytewax.io/?utm_source=pau&utm_medium=partner&utm_content=github)** that expose a pure Python API on top of a highly-efficient language like Rust.
 
-However, things are changing fast with the emergence of Rust and libraries like **[Bytewax](https://bytewax.io/?utm_source=pau&utm_medium=partner&utm_content=github)** that expose a pure Python API on top of a highly-efficient language like Rust.
+So you get the best from both worlds.
 
-So you can develop highly peformant and scalable real-time pipelines in Python 🐍⚡
+- Rust's speed and performance, plus
+- Python rich ecosystem of libraries.
+
+So you can develop highly peformant and scalable real-time pipelines, leveraging top-notch Python libraries.
+
+<p align="center">
+  <h3 align="center">🦀 + 🐝 + 🐍 = ⚡</h3>
+</p>
 
 <br>
 
