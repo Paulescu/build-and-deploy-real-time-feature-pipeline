@@ -23,33 +23,41 @@
 </p>
 
 #### Table of contents
+* [What is a real-time feature pipeline?](#what-is-a-real-time-feature-pipeline)
 * [What is this repo about?](#what-is-this-repo-about)
-* [A bit of context](#a-bit-of-context)
 * [Run the whole thing in 10 minutes](#run-the-whole-thing-in-10-minutes)
 * [Wanna learn more real-time ML?](#wanna-learn-more-real-time-ml)
 
-## What is this repo about?
+## What is a real-time feature pipeline?
 
-In this repository you will learn how to develop and deploy a real-time feature pipeline in Python that
+Machine Learning models are as good as the input features you feed at training and inference time.
 
-* **fetches** real-time trade data (aka raw data) from the [Coinbase Websocket API](https://help.coinbase.com/en/cloud/websocket-feeds/exchange)
-* **transforms** trade data into OHLC data (aka features) in real-time using **[Bytewax](https://bytewax.io/)**, and
-* **stores** these features in the [Hopsworks]() Feature Store
-
-You will also build a dashboard using Bokeh and Streamlit to visualize the final features, in real-time.
-
-<br>
-
-## A bit of context
-Machine Learning models are as good as the input features you feed them both at training and at inference time. And for many real-world applications, like financial trading, these features need to be generated and served **as fast as possible**, so the ML system produces the best predictions possible.
+And for many real-world applications, like financial trading, these features must be generated and served **as fast as possible**, so the ML system produces the best predictions possible.
 
 Generating and serving features fast is what a **real-time feature pipeline** does.
+
+<p align="center">
+  <img src="./images/real_time_feature_pipeline_within_system.gif" width='750' />
+</p>
+
 
 Python alone is not a language designed for speed, which makes it unsuitable for real-time processing. Because of this, real-time feature pipelines were usually writen with Java-based tools (like Apache Spark or Apache Flink).
 
 However, things are changing fast with the emergence of Rust and libraries like **[Bytewax](https://bytewax.io/)** that expose a pure Python API on top of a highly-efficient language like Rust.
 
 So you can develop highly peformant and scalable real-time pipelines in Python 🐍⚡
+
+<br>
+
+## What is this repo about?
+
+In this repository you will learn how to develop and deploy a real-time feature pipeline in 100% Python that
+
+* **fetches** real-time trade data (aka raw data) from the [Coinbase Websocket API](https://help.coinbase.com/en/cloud/websocket-feeds/exchange)
+* **transforms** trade data into OHLC data (aka features) in real-time using **[Bytewax](https://bytewax.io/)**, and
+* **stores** these features in the [Hopsworks]() Feature Store
+
+You will also build a dashboard using Bokeh and Streamlit to visualize the final features, in real-time.
 
 <br>
 
