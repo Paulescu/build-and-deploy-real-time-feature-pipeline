@@ -64,7 +64,7 @@ So you can develop highly performant and scalable real-time pipelines, leveragin
 In this repository you will learn how to develop and deploy a real-time feature pipeline in 100% Python that
 
 * **fetches** real-time trade data (aka raw data) from the [Coinbase Websocket API](https://help.coinbase.com/en/cloud/websocket-feeds/exchange)
-* **transforms** trade data into OHLC data (aka features) in real-time using **[Bytewax](https://bytewax.io/?utm_source=pau&utm_medium=partner&utm_content=github)**, and
+* **transforms** trade data into OHLC data (aka features) in real-time using **[Bytewax](https://github.com/bytewax/bytewax?utm_source=pau&utm_medium=partner&utm_content=github)**, and
 * **stores** these features in the [Hopsworks]() Feature Store
 
 You will also build a dashboard using Bokeh and Streamlit to visualize the final features, in real-time.
